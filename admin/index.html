@@ -55,6 +55,7 @@
         </div>
     </div>
 
+<script src="./libs/http.js"></script>
     <script>
         //入口函数
         $(function () {
@@ -64,7 +65,7 @@
                 // headers:{
                 //     'Authorization':localStorage.getItem('token')
                 // },
-                url: 'http://localhost:8080/api/v1/admin/user/info',
+                url: BigNew.user_info,
                 type: 'get',
                 success: function (backData) {
                     console.log(backData);
