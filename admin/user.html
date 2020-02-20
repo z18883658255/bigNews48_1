@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>文章列表</title>
+    <title>用户信息页</title>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/iconfont.css">
@@ -68,6 +68,40 @@
             </form>
         </div>
     </div>
+    <script src="./libs/http.js"></script>
+    <script>
+        //入口函数
+        $(function () {
+            //一.一进到页面就显示ajax请求,获取管理员的详细信息
+            $.ajax({
+                url: BigNew.user_detail,
+                type: 'get',
+                success: function (backData) {
+                    console.log(backData);
+                    if (backData.code == 200) {
+                        // $('input.username').val(backData.data.username);
+                        // $('input.nickname').val(backData.data.nickname);
+                        // $('input.eamil').val(backData.data.eamil);
+                        // $('input.password').val(backData.data.password);
+
+
+                        //循环 
+                        for(var key in backData.data){
+                            //key的取值
+                            $('input'+key).val(backData.data[key]);
+                        }
+
+
+                        $('img.user_pic').attr('src', backData.data.userpic)
+
+                    }
+                }
+            });
+            //把对应的信息填入到对应的标签中
+
+
+        });
+    </script>
 </body>
 
 </html>

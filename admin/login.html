@@ -48,10 +48,10 @@
           <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
         </div>
         <div class="modal-body">
+          ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
-       
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
               })
             } else {
               // alert(backData.msg);
-              $('.modal-body').text('backData.msg');
+              $('.modal-body').text(backData.msg);
               $('#myModal').modal(); 
             }
           }
@@ -113,6 +113,7 @@
       //如果账号密码有误,提示
     })
   </script>
+
 
 
 
